@@ -56,4 +56,5 @@ contract Variables {
         uint timestamp = block.timestamp; // Current block timestamp
         address sender = msg.sender; // address of the caller
     }
+
 }

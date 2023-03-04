@@ -1,0 +1,104 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "x",
+						"type": "uint256"
+					}
+				],
+				"name": "foo",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "get",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "num",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_num",
+						"type": "uint256"
+					}
+				],
+				"name": "set",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Users/danielbauer/Dropbox/WORK/00. Neue Projekte/X.X.X FORTBILDUNG/X.X.X PROGRAMMIERUNG Db/8.X.X SOLIDITY/X.X.X LEARN WEB 3 DAO/CODE/1.7.0 Freshman - Intro to Solidity/contracts/Conditions.sol": "Conditions"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Users/danielbauer/Dropbox/WORK/00. Neue Projekte/X.X.X FORTBILDUNG/X.X.X PROGRAMMIERUNG Db/8.X.X SOLIDITY/X.X.X LEARN WEB 3 DAO/CODE/1.7.0 Freshman - Intro to Solidity/contracts/Conditions.sol": {
+			"keccak256": "0x8a0b1f20eee246dcb6e8d68917fd034a78d6c5b94fb5e6b05adf0aee244873a1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f09828813d4211a48aa64801597b9fffc34accb55e8947ca6ab99a71b5d0d072",
+				"dweb:/ipfs/QmcbVT34QhXnG3egzwJGMyDG1RhhaPBcT2UFwqoexvh7Ui"
+			]
+		}
+	},
+	"version": 1
+}
