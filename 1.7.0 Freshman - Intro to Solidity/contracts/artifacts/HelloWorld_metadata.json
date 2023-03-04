@@ -47,11 +47,11 @@
 	},
 	"sources": {
 		"Users/danielbauer/Dropbox/WORK/00. Neue Projekte/X.X.X FORTBILDUNG/X.X.X PROGRAMMIERUNG Db/8.X.X SOLIDITY/X.X.X LEARN WEB 3 DAO/CODE/1.7.0 Freshman - Intro to Solidity/contracts/HelloWorld.sol": {
-			"keccak256": "0x72f4fb415252190ab3476ee9e06ff2fcc7d789f8e4e3f53320337c81d9b17c13",
+			"keccak256": "0x27316028a742260adc040f677849ec903bed8c0614fbd9a47d89f19ecaf11e44",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://512b30947f4bf22cefebff7df6364e25545fe0cabd62b22fd85d3c2e94237ef1",
-				"dweb:/ipfs/Qmd1NS5caxXg7qFWnr5XK7SyDBm6MsNtj4hYE5Gi29eTZq"
+				"bzz-raw://92650352c9be5575665a915c3f306bfe85bb97fb7a4af37539e24dbf02c4e59b",
+				"dweb:/ipfs/QmRMeafDvepCekdfmcN1fBGHtAuKbdYtUkWVNSQBctgrPE"
 			]
 		}
 	},
