@@ -1,22 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My First dApp</title>
-  <link rel="stylesheet" href="./index.css">
-</head>
-<body>
-  <h1>This is my first dApp!</h1>
-  <p>Here we can set or get the mood:</p>
-  <div>
-  <label for="mood">Input Mood:</label> <br />
-  <input type="text" id="mood" />
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First dApp</title>
+    <link rel="stylesheet" href="./index.css">
+  </head>
+  <body>
+    <h1>This is my first dApp!</h1>
+    <p>Here we can set or get the mood:</p>
+    <div>
+      <label for="mood">Input Mood:</label> <br />
+      <input type="text" id="mood" />
 
-  <button onclick="getMood()">Get Mood</button>
-  <button onclick="setMood()">Set Mood</button>
-  <p id="showMood"></p>
-</div>
-</body>
+      <button onclick="setMood()">Set Mood</button>
+      <button onclick="getMood()">Get Mood</button>
+      <p id="showMood"></p>
+    </div>
+
+    <!-- Import of ethers in Browser -->
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
+
+    <script>
+      // This provides the connecion to an ethereum host
+      // Web3Provider is the connection to MM in the frontend
+      const provider = new ethers.providers.Web3Provider(window.ethereum, "goerli");
+
+      // Contract address
+      const MoodContractAddress = "0x078EBedF2263B480ef9f49cf4Aeb20D9C2977EF0";
+      // Here the Solidity code must be provided as ABI which is JSON based.
+      const MoodContractABI = [
+      {
+        "inputs": [
+          {
+            "internalType": "string",
+            "name": "_mood",
+            "type": "string"
+          }
+        ],
+        "name": "setMood",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "getMood",
+        "outputs": [
+          {
+            "internalType": "string",
+            "name": "",
+            "type": "string"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      }
+    ]
+      // Declaration of contract and signer ojects
+      let MoodContract;
+      let signer;
+
+      provider.send("eth_requestAccounts", []).then(() => {
+        provider.listAccounts().then((accounts) => {
+          signer = provider.getSigner(accounts[0]);
+          // Creates a contract object with a signer. Therefore Read an writeable.
+          MoodContract = new ethers.Contract(
+            MoodContractAddress,
+            MoodContractABI,
+            signer
+          );
+        });
+      });
+
+      // Calling the get() Method in the contract which returns variable mood
+      async function getMood() {
+        const getMoodPromise = MoodContract.getMood();
+        const Mood = await getMoodPromise;
+        document.getElementById("showMood").innerText = `Your Mood: ${Mood}`;
+        console.log(Mood);
+      }
+      // Calling the set() Method in the contract which sets variable mood to input value
+      async function setMood() {
+        const mood = document.getElementById("mood").value;
+        const setMoodPromise = MoodContract.setMood(mood);
+        await setMoodPromise;
+      }
+    </script>
+  </body>
 </html>
