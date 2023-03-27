@@ -1,5 +1,6 @@
 import Meta from '../components/Meta'
 
+// Standardkomponente für about page
 const about = () => {
   return (
     <div>
