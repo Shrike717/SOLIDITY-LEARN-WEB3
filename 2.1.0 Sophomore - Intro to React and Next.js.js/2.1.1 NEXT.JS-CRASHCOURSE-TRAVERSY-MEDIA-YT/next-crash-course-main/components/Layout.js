@@ -7,10 +7,10 @@ const Layout = ({ children }) => {
   return (
     <>
       <Meta />
-      <Nav />
+      {/* <Nav /> */}
       <div className={styles.container}>
         <main className={styles.main}>
-          <Header />
+          {/* <Header /> */}
           {children}
         </main>
       </div>
